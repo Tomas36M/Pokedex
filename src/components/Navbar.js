@@ -10,23 +10,23 @@ function Navbar({ onSearchChange }) {
                 <div className="flex items-center">
                     <Link to='/'><span className="text-3xl font-logo text-white">Pokedex</span></Link>
                 </div>
-                <div className="flex items-center">
+                <div className="flex lg:hidden">
                     <button
-                        className="text-white lg:hidden"
+                        className="text-white"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
-                    <div className={`lg:flex items-center ${isOpen ? 'block' : 'hidden'}`}>
-                        <input
-                            type="text"
-                            placeholder="Search Pokemon"
-                            className="mt-2 lg:mt-0 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            onChange={(e) => onSearchChange(e.target.value)}
-                        />
-                    </div>
+                </div>
+                <div className={`flex-col lg:flex-row lg:flex items-center ${isOpen ? 'flex' : 'hidden'} space-y-2 lg:space-y-0`}>
+                    <input
+                        type="text"
+                        placeholder="Search Pokemon"
+                        className="mt-2 lg:mt-0 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 lg:w-auto w-full"
+                        onChange={(e) => onSearchChange(e.target.value)}
+                    />
                 </div>
             </div>
         </nav>
